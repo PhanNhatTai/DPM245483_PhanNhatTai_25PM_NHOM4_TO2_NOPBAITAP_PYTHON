@@ -1,13 +1,15 @@
-"""
 from tkinter import *
 def Ok() :
     a=Taikhoang.get()
     b=Mk.get()
-    tb=Tb.get()
+    if a!="" and b!="":
+        Tb.set("Đăng nhập thành công")
+    else :
+        Tb.set("Đăng nhập thất bại")
+root=Tk()
 Taikhoang=StringVar()
 Mk=StringVar()
 Tb=StringVar()
-root=Tk()
 root.title("Hello")
 root.minsize(height=150,width=250)
 root.resizable(height=True,width=True)
@@ -20,5 +22,5 @@ Nut=Frame()
 Button(Nut,text="OK",command=Ok).pack(side=LEFT)
 Button(Nut,text="Cancel",command=root.quit).pack(side=LEFT)
 Nut.grid(row=3,columnspan=2)
+Label(root,textvariable=Tb,justify=CENTER).grid(row=4,columnspan=2)
 root.mainloop()
-"""
